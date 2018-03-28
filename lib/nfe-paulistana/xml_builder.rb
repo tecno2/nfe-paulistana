@@ -248,8 +248,8 @@ module NfePaulistana
           }
         end
         xml.EmailTomador data[:email_tomador]
-        xml.tpPercentualCargaTributaria data[:percentual_carga_tributaria] if data[:percentual_carga_tributaria] != '0'
-        xml.tpFonteCargaTributaria data[:fonte_carga_tributaria]
+        xml.PercentualCargaTributaria data[:percentual_carga_tributaria] if data[:percentual_carga_tributaria] != '0'
+        xml.FonteCargaTributaria data[:fonte_carga_tributaria]
 =begin
         unless (data[:cpf_intermediario].blank? and data[:cnpj_intermediario].blank?)
           xml.CPFCNPJIntermediario { 
