@@ -21,7 +21,7 @@ module NfePaulistana
               {"xmlns" => "http://www.prefeitura.sp.gov.br/nfe"}
         ],
         body: XmlBuilder.new.xml_for(:envio_rps, data, certificado),
-        version: 2
+        version: 4
       })
       Response.new(xml: response.hash[:envio_rps_response][:retorno_xml], method: :envio_rps_response)
     rescue Savon::Error => error
