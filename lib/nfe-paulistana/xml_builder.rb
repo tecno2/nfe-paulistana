@@ -68,7 +68,7 @@ module NfePaulistana
     
     def xml(method, data, certificado)
       builder = Nokogiri::XML::Builder.new do |xml|
-        xml.send(METHODS[method], "xmlns:xsi" => "http://www.w3.org/2001/XMLSchema-instance", "xmlns:xsd" => "http://www.w3.org/2001/XMLSchema", "xmlns" => "http://www.portalfiscal.inf.br/nfe" ) {
+        xml.send(METHODS[method], "xmlns:xsi" => "http://www.w3.org/2001/XMLSchema-instance", "xmlns:xsd" => "http://www.w3.org/2001/XMLSchema", "xmlns" => "http://www.prefeitura.sp.gov.br/nfe" ) {
           xml.Cabecalho( "Versao" => "1", :xmlns => "" ) {
             xml.CPFCNPJRemetente {
               xml.CPF data[:cpf_remetente] unless data[:cpf_remetente].blank?
