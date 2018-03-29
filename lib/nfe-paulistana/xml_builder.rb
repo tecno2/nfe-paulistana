@@ -61,7 +61,7 @@ module NfePaulistana
 
     def xml_for(method,data, certificado)
       data = DEFAULT_DATA.merge(data)
-      ("<VersaoSchema>2</VersaoSchema><MensagemXML>" + assinar(xml(method, data, certificado), certificado).gsub("&","&amp;").gsub(">","&gt;").gsub("<","&lt;").gsub("\"","&quot;").gsub("'","&apos;") + "</MensagemXML>").gsub(/\n/,'')
+      ("<VersaoSchema>3.1</VersaoSchema><MensagemXML>" + assinar(xml(method, data, certificado), certificado).gsub("&","&amp;").gsub(">","&gt;").gsub("<","&lt;").gsub("\"","&quot;").gsub("'","&apos;") + "</MensagemXML>").gsub(/\n/,'')
     end
 
     private
@@ -69,7 +69,7 @@ module NfePaulistana
     def xml(method, data, certificado)
       builder = Nokogiri::XML::Builder.new do |xml|
         xml.send(METHODS[method], "xmlns:xsi" => "http://www.w3.org/2001/XMLSchema-instance", "xmlns:xsd" => "http://www.w3.org/2001/XMLSchema", "xmlns" => "http://www.prefeitura.sp.gov.br/nfe" ) {
-          xml.Cabecalho( "Versao" => "2", :xmlns => "" ) {
+          xml.Cabecalho( "Versao" => "3.1", :xmlns => "" ) {
             xml.CPFCNPJRemetente {
               xml.CPF data[:cpf_remetente] unless data[:cpf_remetente].blank?
               xml.CNPJ data[:cnpj_remetente] unless data[:cnpj_remetente].blank?
