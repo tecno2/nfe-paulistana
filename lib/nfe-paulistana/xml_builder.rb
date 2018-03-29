@@ -55,7 +55,6 @@ module NfePaulistana
       :email_intermediario => '',
       :discriminacao => '',
       :percentual_carga_tributaria => '0',
-      :fonte_carga_tributaria => 'IBPT',
       :wsdl => 'https://nfe.prefeitura.sp.gov.br/ws/lotenfe.asmx?wsdl'
     }
 
