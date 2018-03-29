@@ -54,7 +54,6 @@ module NfePaulistana
       :email_tomador => '',
       :email_intermediario => '',
       :discriminacao => '',
-      :percentual_carga_tributaria => '0',
       :wsdl => 'https://nfe.prefeitura.sp.gov.br/ws/lotenfe.asmx?wsdl'
     }
 
@@ -247,8 +246,6 @@ module NfePaulistana
           }
         end
         xml.EmailTomador data[:email_tomador]
-        xml.PercentualCargaTributaria data[:percentual_carga_tributaria] if data[:percentual_carga_tributaria] != '0'
-        xml.FonteCargaTributaria data[:fonte_carga_tributaria]
 =begin
         unless (data[:cpf_intermediario].blank? and data[:cnpj_intermediario].blank?)
           xml.CPFCNPJIntermediario { 
