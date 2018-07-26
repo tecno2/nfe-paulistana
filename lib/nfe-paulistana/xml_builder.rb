@@ -260,7 +260,7 @@ module NfePaulistana
         xml.Discriminacao data[:discriminacao]
         xml.PercentualCargaTributaria data[:percentual_carga_tributaria]
         xml.FonteCargaTributaria data[:fonte_carga_tributaria]
-        xml.ValorCargaTributaria data[:valor_carga_tributaria]
+       # xml.ValorCargaTributaria data[:valor_carga_tributaria]
       }
     end
 
